@@ -25,6 +25,7 @@ include $(CLEAR_VARS)
 
 libOmxQcelp13Enc-inc       := $(LOCAL_PATH)/inc
 libOmxQcelp13Enc-inc       += $(TARGET_OUT_HEADERS)/mm-core/omxcore
+libOmxQcelp13Enc-inc       += $(call project-path-for,qcom-media)/mm-core/inc
 
 LOCAL_MODULE            := libOmxQcelp13Enc
 LOCAL_MODULE_TAGS       := optional
@@ -37,7 +38,7 @@ LOCAL_SHARED_LIBRARIES  := libutils liblog
 LOCAL_SRC_FILES         := src/aenc_svr.c
 LOCAL_SRC_FILES         += src/omx_qcelp13_aenc.cpp
 
-LOCAL_HEADER_LIBRARIES := generated_kernel_headers media_headers
+LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
 include $(BUILD_SHARED_LIBRARY)
 

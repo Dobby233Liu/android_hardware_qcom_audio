@@ -23,8 +23,8 @@ libOmxAacEnc-def += -Wno-sign-conversion -Wno-self-assign -Wno-format -Wno-macro
 
 include $(CLEAR_VARS)
 
-libOmxAacEnc-inc       := $(LOCAL_PATH)/inc
-libOmxAacEnc-inc       += $(TARGET_OUT_HEADERS)/mm-core/omxcore
+libOmxAacEnc-inc        := $(LOCAL_PATH)/inc
+libOmxAacEnc-inc        += $(call project-path-for,qcom-media)/mm-core/inc
 
 LOCAL_MODULE            := libOmxAacEnc
 LOCAL_MODULE_TAGS       := optional
@@ -37,7 +37,7 @@ LOCAL_SHARED_LIBRARIES  := libutils liblog
 LOCAL_SRC_FILES         := src/aenc_svr.c
 LOCAL_SRC_FILES         += src/omx_aac_aenc.cpp
 
-LOCAL_HEADER_LIBRARIES := generated_kernel_headers media_headers
+LOCAL_HEADER_LIBRARIES  := generated_kernel_headers
 
 include $(BUILD_SHARED_LIBRARY)
 
